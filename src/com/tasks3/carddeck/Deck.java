@@ -32,5 +32,27 @@ public class Deck {
     //SPADES 7, ..., CLUBS 6, ..., CLUBS Ace і так далі до HEARTS Ace
     public Card drawOne() {
     	return new Card(Rank.SIX, Suit.SPADES);
-    } 
+    }
+    
+	public static void main(String[] args) {
+		
+		Card[] dk;
+		dk = new Card[36];
+		dk[1] = new Card(Rank.ACE, Suit.CLUBS);
+		
+		//System.out.println(pack[1].getRank().getName());
+		
+		int i = -1;
+	    for (Suit suit: Suit.values) {
+	        for (Rank rank: Rank.values) {
+	            dk[++i] = new Card(rank,suit);
+	        }
+	    }
+	    
+		System.out.print(dk[10].getSuit().getName());
+		System.out.print(" ");
+		System.out.println(dk[10].getRank().getName());
+		
+	}
+    
 }

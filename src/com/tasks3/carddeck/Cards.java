@@ -1,5 +1,5 @@
 package com.tasks3.carddeck;
-
+import java.util.*;
 public class Cards {
 
 	public static void main(String[] args) {
@@ -12,6 +12,12 @@ public class Cards {
 		pack[1] = new Card(Rank.ACE, Suit.CLUBS);
 		
 		System.out.println(pack[1].getRank().getName());
+		
+		Map<Integer, Card> states = new HashMap<Integer, Card>();
+		
+
+		
+		//System.out.println(hh.
 	}
 
 }
