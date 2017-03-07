@@ -19,12 +19,13 @@ public class Deck {
     //Перемішує колоду у випадковому порядку 
     public void shuffle() {
     	Card tmpCard;
-    	int q = (int) (Math.random()*400+600);
+    	int q = (int) (Math.random()*300+700);
     	for (int n=0; n<q; n++){
-    		int m = (int) (Math.random()*32+4);
+    		int l = (int) (Math.random()*32);
+    		int m = (int) (Math.random()*(36-l)+l);
     		tmpCard = this.deck[m];
-    		this.deck[m] = this.deck[m-4];
-    		this.deck[m-4] = tmpCard;
+    		this.deck[m] = this.deck[m-l];
+    		this.deck[m-l] = tmpCard;
     	}
     }
     /* * Впорядкування колоди за мастями та значеннями 
