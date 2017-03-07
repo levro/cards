@@ -1,6 +1,20 @@
 package com.tasks3.carddeck;
 
 public class Deck {
+	Card[] deck;
+    int index = 0;
+	// Constructor
+	
+	public Deck(){    	
+		int i = -1;
+		this.deck = new Card[Suit.values.length * Rank.values.length];
+	    for (Suit suit: Suit.values) {
+	        for (Rank rank: Rank.values) {
+	            deck[++i] = new Card(rank,suit);
+	        }
+	    }
+	}
+	
     //Перемішує колоду у випадковому порядку 
     public void shuffle() {
     }
@@ -35,11 +49,14 @@ public class Deck {
     }
     
 	public static void main(String[] args) {
+				
+		Deck dk1 = new Deck();
 		
+		/*
 		Card[] dk;
 		dk = new Card[36];
 		dk[1] = new Card(Rank.ACE, Suit.CLUBS);
-		
+		//System.out.println(dk1.deck.length);
 		//System.out.println(pack[1].getRank().getName());
 		
 		int i = -1;
@@ -47,11 +64,20 @@ public class Deck {
 	        for (Rank rank: Rank.values) {
 	            dk[++i] = new Card(rank,suit);
 	        }
+	    }*/
+		
+	    for (int j=0; j<36; j++){
+			System.out.print(dk1.deck[j].getRank().getName());
+			System.out.print(" ");
+			System.out.println(dk1.deck[j].getSuit().getName());
 	    }
-	    
-		System.out.print(dk[10].getSuit().getName());
-		System.out.print(" ");
-		System.out.println(dk[10].getRank().getName());
+		System.out.println(dk1.hasNext());
+		
+		System.out.println(Suit.values.length);
+		System.out.println(Rank.values.length);
+		System.out.println("-----------------------------------------");
+		
+
 		
 	}
     
