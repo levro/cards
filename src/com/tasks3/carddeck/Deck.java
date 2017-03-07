@@ -19,12 +19,12 @@ public class Deck {
     //Перемішує колоду у випадковому порядку 
     public void shuffle() {
     	Card tmpCard;
-    	int q = (int) (Math.random()*1000+4000);
+    	int q = (int) (Math.random()*400+600);
     	for (int n=0; n<q; n++){
-    		int m = (int) (Math.random()*28+8);
+    		int m = (int) (Math.random()*32+4);
     		tmpCard = this.deck[m];
-    		this.deck[m] = this.deck[m-8];
-    		this.deck[m-8] = tmpCard;
+    		this.deck[m] = this.deck[m-4];
+    		this.deck[m-4] = tmpCard;
     	}
     }
     /* * Впорядкування колоди за мастями та значеннями 
@@ -91,17 +91,18 @@ public class Deck {
 				
 		Deck dk1 = new Deck();
 
-		//dk1.deckPrn();
-		System.out.println("---------------------3------------------------");
+		dk1.shuffle();
+		dk1.deckPrn();
 		//dk1.order();
 		//dk1.cardPrn(dk1.deck[10]);
-		
+		/*
 		for (int t=0; t<36; t++){
 			dk1.cardPrn(dk1.drawOne());
 			System.out.println("----------------------");	
 		}
 		System.out.println(dk1.hasNext());
 		dk1.deckPrn();
+		*/
 	}
     
 }
